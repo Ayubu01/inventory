@@ -11,6 +11,8 @@
 |
  */
 
+use App\Http\Controllers\Auth\ResetPasswordController;
+
 Route::get('/', function () {
 	return view('auth.login');
 });
@@ -18,6 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/resetPassword', [ResetPasswordController::class, 'index'])->name('reset');
+Route::post('/resetPassword', [ResetPasswordController::class, 'store']);
 
 Route::get('dashboard', function () {
 	return view('layouts.master');

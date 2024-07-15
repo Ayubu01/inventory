@@ -62,7 +62,8 @@
                                         <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                         <span>Remember me</span>
                                     </label>
-                                </div>
+                                    <a href="{{route('reset')}}">Forget Password</a>
+                                </div>                                
                                 <button type="submit" class="btn btn-success btn-lg btn-block">LOGIN</button>
                                 <!-- <div class="bottom">
                                     @if (Route::has('password.request'))
